@@ -1,0 +1,26 @@
+{
+  "name": "italo-alexa",
+  "version": "0.0.1",
+  "description": "An Amazon Alexa skill for fans of 1980's Italo disco music",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export": "cd apps/italo-alexa && mkdir node_modules && chmod a+r node_modules && cp -r ../../node_modules/* node_modules && zip -r italoDisco.zip * && rm -rf node_modules && node -e \"require('./index').schema()\" > italo-alexa-schema.json && node -e \"require('./index').utterances()\" > italo-alexa-utterances.txt && mv italoDisco.zip ../../exports && mv italo-alexa-schema.json ../../exports && mv italo-alexa-utterances.txt ../../exports"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaxwellPayne/italo-alexa.git"
+  },
+  "author": "Maxwell McLennan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaxwellPayne/italo-alexa/issues"
+  },
+  "homepage": "https://github.com/MaxwellPayne/italo-alexa",
+  "dependencies": {
+    "alexa-app": "https://github.com/MaxwellPayne/alexa-app/tarball/master",
+    "underscore": "latest"
+  },
+  "devDependencies": {
+    "alexa-app-server": "latest"
+  }  
+}
