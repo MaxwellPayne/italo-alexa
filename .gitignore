@@ -28,3 +28,9 @@ node_modules
 
 # Exported content for AWS Lambda and Alexa Skills Kit
 exports/
+
+# Keep config.json files for apps private
+apps/italo-alexa/config.json
+
+# Stupid .DS_Store files on OSX
+.DS_Store

@@ -18,7 +18,9 @@
   "homepage": "https://github.com/MaxwellPayne/italo-alexa",
   "dependencies": {
     "alexa-app": "https://github.com/MaxwellPayne/alexa-app/tarball/master",
-    "underscore": "latest"
+    "underscore": "latest",
+    "q": "^1.0.0",
+    "ssml": "0.0.3"
   },
   "devDependencies": {
     "alexa-app-server": "latest"

@@ -1,7 +1,9 @@
 'use strict';
 
-var alexa = require('alexa-app'),
+var util  = require('util'),
+    alexa = require('alexa-app'),
     _     = require('underscore'),
+    ssml  = require('ssml'),
     songs = require('./songs');
 var app   = new alexa.app('italo-alexa');
 
@@ -29,17 +31,18 @@ app.intent('TestIntent', {
   ]
 }, function(req, res) {
   var artist = req.slot('Artist');
+  var mediaUrl = songs[DEFAULT_ARTIST].getMediaUrl();
   var reply;
   if (_.has(songs, artist)) {
     // play song if exists
-    reply = songs[artist].music;
+    reply = util.format('Ok, %s coming right up.', artist);
+    mediaUrl = songs[artist].getMediaUrl();
   } else {
     // play a default song
-    reply = 'Let\'s just listen to ' + 
-      songs[DEFAULT_ARTIST].music + ' instead';
+    reply = util.format('Fuck that. Let\'s just listen to %s instead.', DEFAULT_ARTIST);
   }
 
-  res.say(reply);
+  res.say(reply).say(new ssml().break(200).audio(mediaUrl));
   res.card(APP_NAME, reply);
 });
 
@@ -48,6 +51,8 @@ app.sessionEnded(function(req, res) {
 });
 
 app.error = function(ex, req, res) {
+  console.log('ERROR');
+  console.log(ex);
   res.say('Oh no! Some sort of mysterious error occurred');
 };
 

@@ -1,0 +1,1 @@
+Write a script to automate the current ffmpeg conversion command, which is `ffmpeg -i <input-file> -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 <output-file>`.
