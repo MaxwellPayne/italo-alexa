@@ -40,7 +40,8 @@ app.intent('SingIntent', {
     mediaUrl = songs[artist].getMediaUrl();
   } else {
     // play a default song
-    reply = util.format('Fuck that. Let\'s just listen to %s instead.', DEFAULT_ARTIST);
+    var fuck = '<phoneme alphabet="ipa" ph="f\u0259\u0259k">fuk</phoneme>';
+    reply = util.format(fuck + ' that. Let\'s just listen to %s instead.', DEFAULT_ARTIST);
   }
 
   res.say(reply).say(new ssml().break(200).audio(mediaUrl));
