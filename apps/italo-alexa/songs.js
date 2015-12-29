@@ -22,8 +22,16 @@ Song.prototype.download = function() {
 };
 
 var songs = [
-  new Song('Topo and Roby', 'Under the Ice'),
-  new Song('Taffy', 'Midnight Radio')
+  new Song('Eddy Huntington', 'U.S.S.R'),
+  new Song('Gary Low', 'You are a Danger'),
+  new Song('Joe Yellow', 'Take my Heart'),
+  new Song('Martinelli', 'Voices in the Night'),
+  new Song('P Lion', 'Happy Children'),
+  new Song('Raf', 'Self Control'),
+  new Song('Raggio di Luna', 'Comanchero'),
+  new Song('Taffy', 'Midnight Radio'),
+  new Song('Tom Hooker', 'Looking for Love'),
+  new Song('Topo and Roby', 'Under the Ice')
 ];
 
 module.exports = {};

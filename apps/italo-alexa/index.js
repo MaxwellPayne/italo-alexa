@@ -16,7 +16,7 @@ app.launch(function(req, res) {
   // pass
 });
 
-app.intent('TestIntent', {
+app.intent('SingIntent', {
   'slots': {
     'Artist': 'ITALO_ARTIST'
   },
@@ -30,7 +30,8 @@ app.intent('TestIntent', {
     '{sing|play} {-|Artist}'
   ]
 }, function(req, res) {
-  var artist = req.slot('Artist');
+  var artist = req.slot('Artist').toLowerCase();
+  console.log('Received request for artist: ' + artist);
   var mediaUrl = songs[DEFAULT_ARTIST].getMediaUrl();
   var reply;
   if (_.has(songs, artist)) {
